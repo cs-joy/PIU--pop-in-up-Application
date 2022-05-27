@@ -1,5 +1,7 @@
 <?php
 
+include("./config.php");
+
 if (isset($_POST['sign-up'])) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -7,7 +9,15 @@ if (isset($_POST['sign-up'])) {
     $phone = $_POST['phone'];
     $password = $_POST['password'];
 
-    echo $firstname . "" . $lastname . "" . $email . "" . $phone . "" . $password;
+    $query = "INSERT INTO piu_users (firstname, lastname, email, phone, password) VALUES(?, ?, ?, ?, ?)";
+    $stmtinsert = $con->prepare($query);
+    $result = $stmtinsert->execute([$firstname, $lastname, $email, $phone, $password]);
+    //$executing = mysqli_query($con, $query);
+    if($result) {
+        echo "User Data Submitted Successfully";
+    } else {
+        echo "There were errors while saving the data";
+    }
 }
 
 ?>
