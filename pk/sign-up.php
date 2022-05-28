@@ -79,6 +79,9 @@
                                 'text': data,
                                 'type': 'success'
                             })
+                            if($.trim(data) == "Successfully Registered Your Account!"){
+                            setTimeout('window.location.href= "login/log-in.php"', 2000);
+                        }
 
                         },
                         error: function(data) {
