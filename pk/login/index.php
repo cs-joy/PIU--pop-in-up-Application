@@ -6,6 +6,12 @@ if (!isset($_SESSION['userlogin'])) {
     header("Location: log-in.php");
 }
 
+if(isset($_GET['logout'])){
+    session_destroy();
+    unset($_SESSION);
+    header("Location: log-in.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +29,9 @@ if (!isset($_SESSION['userlogin'])) {
     <div class="container my-5">
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
             <h2 style="text-align: center">Welcome to PIU</h2>
+            <button class="btn btn-primary">
+                <a href="index.php?logout=true" class="text-light text-decoration-none">Logout</a>
+            </button>
         </div>
     </div>
 </body>
