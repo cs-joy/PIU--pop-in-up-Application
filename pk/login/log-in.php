@@ -1,6 +1,6 @@
 <?php
   session_start();
-  
+
   if(isset($_SESSION['userlogin'])){
       header("Location: index.php");
   }
@@ -56,7 +56,7 @@
                 </form>
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account? <a href="registration.php" class="ml-2 text-light">Sign Up</a>
+                        Don't have an account? <a href="../sign-up.php" class="ml-2 text-light">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#" class="text-light">Forgot your password?</a>
