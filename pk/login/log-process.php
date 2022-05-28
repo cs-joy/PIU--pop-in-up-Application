@@ -1,5 +1,5 @@
 <?php
-
+echo "from log-process.php";
 require_once('../config.php');
 
 $query = "SELECT * FROM piu_users";
