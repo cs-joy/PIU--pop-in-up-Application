@@ -42,6 +42,7 @@
     <!--
         update[LTS]
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
@@ -53,13 +54,11 @@
 
                 if (valid) {
 
-
                     var firstname = $('#firstname').val();
                     var lastname = $('#lastname').val();
                     var email = $('#email').val();
                     var phone = $('#phone').val();
                     var password = $('#password').val();
-
 
                     e.preventDefault();
 
@@ -89,19 +88,8 @@
                             })
                         }
                     });
-
-
-                } else {
-
                 }
-
-
-
-
-
             });
-
-
         });
     </script>
     
