@@ -1,13 +1,21 @@
 <?php
-echo "from log-process.php";
-require_once('../config.php');
 
-$query = "SELECT * FROM piu_users";
-$stmtselect = $con->prepare($query);
-$result = $stmtselect->execute([]);
+require_once('setting.php');
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$query = "SELECT * FROM piu_users WHERE email= ? AND password= ? LIMIT 1";
+$stmtselect = $db->prepare($query);
+$result = $stmtselect->execute([$username, $password]);
 
 if($result) {
-    echo "Success";
+    $user = $stmtselect->fetch(PDO::FETCH_ASSOC);
+    if($stmtselect->rowCount() > 0) {
+        echo "1";
+    } else {
+        echo "No users found!";
+    }
 } else {
     echo "Error!";
 }

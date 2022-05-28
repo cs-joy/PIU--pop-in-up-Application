@@ -74,6 +74,9 @@
                     data: {username: username, password: password},
                     success: function(data) {
                         alert(data);
+                        if($.trim(data) == "1"){
+                            setTimeout('window.location.href= "index.php"', 2000);
+                        }
                     },
                     error: function(data) {
                         alert('error');
